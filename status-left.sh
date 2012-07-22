@@ -5,7 +5,11 @@
 cwd=$(dirname $0)
 
 # Source global configurations.
-source "${cwd}/config.sh"
+if [[ -e "~/.tmux-powerline.conf" ]]; then
+    source "~/.tmux-powerline.conf"
+else
+    source "${cwd}/config.sh"
+fi
 
 # Source lib functions.
 source "${cwd}/lib.sh"
