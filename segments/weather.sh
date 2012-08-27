@@ -74,7 +74,7 @@ if [ -f "$tmp_file" ]; then
 		last_update=$(stat -c "%Y" ${tmp_file})
 	fi
 	time_now=$(date +%s)
-	update_period=600
+	update_period=1800
 
 	up_to_date=$(echo "(${time_now}-${last_update}) < ${update_period}" | bc)
 	if [ "$up_to_date" -eq 1 ]; then
